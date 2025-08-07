@@ -1,1 +1,10 @@
 #+title: Personal dotfiles
+
+Deploy with:
+#+begin_src bash
+./setup-links.bash
+#+end_src
+
+This will link all the config files to =$HOME=.
+Folders are not linked, they are created as needed and the files within are linked.
+This way local files can be mixed in at all time.
