@@ -1,22 +1,7 @@
 # Derived from default config CachyOS for sway.
 # Read `man 5 sway` for a complete reference.
 
-#############
-# Variables #
-
-# Mod4 is Super, Mod1 is Alt.
-set $mod Mod4
-
-# Home row direction keys.
-set $left h
-set $down j
-set $up k
-set $right l
-
-# Terminal emulator.
-set $term foot
-# Application launcher.
-set $menu wmenu-run
+include config.d/*
 
 ###########
 # Display #
@@ -143,7 +128,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Layout #
 
 # Horizontal and vertical splits.
-bindsym $mod+b splith
+bindsym $mod+h splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles.
@@ -236,5 +221,3 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
-
-include config.d/*
