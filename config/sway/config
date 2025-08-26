@@ -46,6 +46,9 @@ input "type:keyboard" {
   xkb_layout gb
 }
 
+# Select keyboard layout.
+bindsym $mod+p exec echo -e 'fr\ngb' | wmenu | xargs swaymsg input type:keyboard xkb_layout
+
 ##############
 # Appearance #
 
