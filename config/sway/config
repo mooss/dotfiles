@@ -104,13 +104,11 @@ gaps outer 8
 # Key bindings #
 ################
 
-# Start a terminal.
-bindsym $mod+Return exec $term
 
 # Kill focused window.
 bindsym $mod+Shift+q kill
 
-# Start your launcher.
+# Start the application launcher.
 bindsym $mod+d exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -125,6 +123,16 @@ bindsym $mod+Shift+c reload
 
 # Exit sway (logs out of your Wayland session).
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+#################
+# App launchers #
+
+bindsym $mod+Return exec $term
+bindsym $mod+o exec /usr/bin/firefox
+bindsym $mod+n exec nemo
+bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym $mod+g exec emacsclient --alternate-editor= --create-frame
+bindsym $mod+comma exec emacsclient --alternate-editor= --create-frame ~/projects/dotfiles/config/sway/config
 
 ##################
 # Moving windows #
@@ -255,9 +263,6 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ t
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
-# Take a screenshot with grim.
-bindsym Print exec grim
-
 ##############
 # Status bar #
 ##############
@@ -278,3 +283,9 @@ bar {
   }
   status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 }
+
+#############
+# Autostart #
+#############
+
+exec emacs --daemon
