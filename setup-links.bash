@@ -49,7 +49,7 @@ function lnk() {
     fi
 }
 
-DOTTED='config'
+DOTTED='config zshrc'
 for file in $DOTTED; do
     lnk $file .$file
 done
