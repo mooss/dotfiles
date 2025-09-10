@@ -45,7 +45,7 @@ input "type:keyboard" {
 }
 
 # Select keyboard layout.
-bindsym $mod+p exec echo -e 'fr\ngb' | wmenu | xargs swaymsg input type:keyboard xkb_layout
+bindsym $mod+p exec echo -e 'fr\ngb' | $menu -dmenu | xargs swaymsg input type:keyboard xkb_layout
 
 ##############
 # Appearance #
@@ -106,7 +106,7 @@ gaps outer 8
 bindsym $mod+Shift+q kill
 
 # Start the application launcher.
-bindsym $mod+d exec $menu
+bindsym $mod+d exec $menu -show drun
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
