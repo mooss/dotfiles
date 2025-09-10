@@ -5,14 +5,12 @@ include config.d/*
 
 ###########
 # Display #
-
-# output * bg ~/.wallpaper fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
 # Get output names with: `swaymsg -t get_outputs`.
+
+output eDP-1 resolution 1920x1080 position 4480 360
+output DP-1 resolution 2560x1440 position 1920 0
+
+bindsym $mod+F11 output eDP-1 resolution 1920x1080 position 4480 360; output DP-1 resolution 2560x1440 position 1920 0
 
 ########
 # Idle #
@@ -43,7 +41,7 @@ include config.d/*
 # See `man 5 sway-input` for more information.
 
 input "type:keyboard" {
-  xkb_layout gb
+  xkb_layout fr
 }
 
 # Select keyboard layout.
@@ -103,7 +101,6 @@ gaps outer 8
 ################
 # Key bindings #
 ################
-
 
 # Kill focused window.
 bindsym $mod+Shift+q kill
