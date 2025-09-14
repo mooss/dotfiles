@@ -2,5 +2,7 @@
 bindkey '^[f' emacs-forward-word
 bindkey '^[b' emacs-backward-word
 
-setopt nocorrectall
+setopt nocorrectall # Stop invasive correction to neighboring filename.
+setopt no_share_history # Don't share history across sessions.
 PATH=$PATH:$HOME/.local/bin
+
