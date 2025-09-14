@@ -6,3 +6,6 @@ setopt nocorrectall # Stop invasive correction to neighboring filename.
 setopt no_share_history # Don't share history across sessions.
 PATH=$PATH:$HOME/.local/bin
 
+# Enable proper make autocompletion.
+zstyle ':completion:*:make:*:targets' call-command true
+zstyle ':completion:*:*:make:*' tag-order 'targets'
