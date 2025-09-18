@@ -4,6 +4,7 @@ bindkey '^[b' emacs-backward-word
 
 setopt nocorrectall # Stop invasive correction to neighboring filename.
 setopt no_share_history # Don't share history across sessions.
+setopt rm_star_silent # Don't nag about using * with rm ><"
 PATH=$PATH:$HOME/.local/bin
 
 # Enable proper make autocompletion.
