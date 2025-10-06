@@ -127,9 +127,12 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway
 bindsym $mod+Return exec $term
 bindsym $mod+o exec /usr/bin/firefox
 bindsym $mod+n exec nemo
-bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym $mod+g exec emacsclient --alternate-editor= --create-frame
 bindsym $mod+comma exec emacsclient --alternate-editor= --create-frame ~/projects/dotfiles/config/sway/config
+
+# Screen capture.
+# See https://github.com/emersion/grim for more.
+bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
 
 ##################
 # Moving windows #
@@ -211,7 +214,6 @@ bindsym $mod+space focus mode_toggle
 
 # Move focus to the parent container.
 bindsym $mod+a focus parent
-
 
 ##############
 # Scratchpad #
