@@ -7,10 +7,20 @@ include config.d/*
 # Display #
 # Get output names with: `swaymsg -t get_outputs`.
 
-output eDP-1 resolution 1920x1080 position 4480 360
-output DP-2 resolution 2560x1440 position 1920 0
+# output eDP-1 resolution 1920x1080 position 4480 360
+# output DP-2 resolution 2560x1440 position 1920 0
+# bindsym $mod+F11 output eDP-1 resolution 1920x1080 position 4480 360; output DP-2 resolution 2560x1440 position 1920 0
 
-bindsym $mod+F11 output eDP-1 resolution 1920x1080 position 4480 360; output DP-2 resolution 2560x1440 position 1920 0
+
+output eDP-1 enable resolution 1920x1080 position 2560 360
+output HDMI-A-1 enable resolution 2560x1440@119.998Hz position 0 0
+
+# Disable secondary.
+bindsym $mod+F9 output eDP-1 enable; output HDMI-A-1 disable
+# Enable everything.
+bindsym $mod+F10  output eDP-1 enable; output HDMI-A-1 enable
+# Dual monitor setup.
+bindsym $mod+F11 output eDP-1 enable resolution 1920x1080 position 2560 360; output HDMI-A-1 enable resolution 2560x1440@119.998Hz position 0 0
 
 ########
 # Idle #
